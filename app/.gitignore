@@ -1,0 +1,11 @@
+/build
+.gradle/
+*/build/
+*.apk, *.aab, *aar
+local.properties
+.idea/workspace.xml
+*.iml
+.idea/modules.xml
+*.jks
+*.keystore
+google-services.json
