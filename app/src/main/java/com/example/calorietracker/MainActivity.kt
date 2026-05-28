@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -19,15 +20,20 @@ import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.calorietracker.ui.theme.CalorieTrackerTheme
+import kotlinx.coroutines.flow.WhileSubscribed
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +42,17 @@ class MainActivity : ComponentActivity() {
         setContent {
             CalorieTrackerTheme {
                 Scaffold(
-                    modifier = Modifier.fillMaxSize(),
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(
+                            brush = Brush.verticalGradient(
+                                colors = listOf(
+                                    Color(0xFFFFAA57),
+                                    Color(0x00000000)
+                                )
+                            )
+                        ),
+                    containerColor = Color.Transparent,
                     topBar = { TopBar() },
                     bottomBar = { BottomNavBar() }
                 ) { padding ->
@@ -54,11 +70,11 @@ fun TopBar() {
         title = {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 IconButton(onClick = { }) {
-                    Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, contentDescription = "Previous day")
+                    Icon(Icons.AutoMirrored.Filled.KeyboardArrowLeft, contentDescription = "Previous day")
                 }
                 Text(text = "Tue, May 12") // TODO: Replace with actual calendar
                 IconButton(onClick = { }) {
-                    Icon(Icons.AutoMirrored.Filled.KeyboardArrowLeft, contentDescription = "Next day")
+                    Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, contentDescription = "Next day")
                 }
             }
         },
@@ -71,7 +87,11 @@ fun TopBar() {
             IconButton(onClick = { }) {
                 Icon(Icons.Default.AccountCircle, contentDescription = "Profile")
             }
-        }
+        },
+        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+            // Transparent so parent gradient can show through
+            containerColor = Color.Transparent
+        )
     )
 }
 
@@ -95,5 +115,5 @@ fun MainContent(modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    return
+
 }
