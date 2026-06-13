@@ -1,0 +1,35 @@
+# Project Builds & Local Caches
+build/
+*/build/
+.gradle/
+.kotlin/
+captures/
+.externalNativeBuild/
+.cxx/
+*.log
+
+# Android Studio IDE (.idea folder)
+ # .idea/
+ .idea/workspace.xml
+ .idea/tasks.xml
+ .idea/dependencies.xml
+ .idea/caches/
+ .idea/deploymentTargetSelector.xml
+ .idea/deviceManager.xml
+*.iml
+
+# Security, Private Keys & Configuration
+local.properties
+*.jks
+*.keystore
+google-services.json
+crashlytics.properties
+
+# Output Bundles (Compiled Apps)
+*.apk
+*.aab
+*.aar
+
+# Operating System Junk Files
+.DS_Store
+Thumbs.db
