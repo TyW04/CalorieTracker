@@ -1,30 +1,29 @@
+# Project Builds & Local Caches
 build/
-.gradle/
 */build/
-*.apk
-*.aab
-*aar
-local.properties
-.idea/workspace.xml
+.gradle/
+.kotlin/
+captures/
+.externalNativeBuild/
+.cxx/
+*.log
+
+# Android Studio IDE (.idea folder)
+.idea/
 *.iml
-.idea/modules.xml
+
+# Security, Private Keys & Configuration
+local.properties
 *.jks
 *.keystore
 google-services.json
+crashlytics.properties
 
-# Kotlin build caches
-.kotlin/
+# Output Bundles (Compiled Apps)
+*.apk
+*.aab
+*.aar
 
-# IDE settings you want to avoid sharing
-.idea/libraries/
-.idea/caches/
-.idea/navEditor.xml
-.idea/assetWizardSettings.xml
-
-# Local user/OS configuration files
+# Operating System Junk Files
 .DS_Store
 Thumbs.db
-
-# Crashlytics and build logs
-crashlytics.properties
-*.log
