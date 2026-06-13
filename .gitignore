@@ -9,7 +9,13 @@ captures/
 *.log
 
 # Android Studio IDE (.idea folder)
-.idea/
+ # .idea/
+ .idea/workspace.xml
+ .idea/tasks.xml
+ .idea/dependencies.xml
+ .idea/caches/
+ .idea/deploymentTargetSelector.xml
+ .idea/deviceManager.xml
 *.iml
 
 # Security, Private Keys & Configuration
