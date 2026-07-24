@@ -11,7 +11,9 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import com.example.calorietracker.ui.navigation.Screen
+import com.example.calorietracker.ui.theme.CalorieTrackerTheme
 
 @Composable
 fun BottomNavigationBar(currentRoute: String = "Home") {
@@ -29,7 +31,7 @@ fun BottomNavigationBar(currentRoute: String = "Home") {
         NavigationBarItem(
             icon = Screen.NavigationTabs.Destinations.Track.icon,
             selected = (currentRoute ==
-                    Screen.NavigationTabs.Destinations.Home.route),
+                    Screen.NavigationTabs.Destinations.Track.route),
             label = { Text("Track") },
             onClick = { /* TODO: Add function to load the Track screen */ }
         )
@@ -51,5 +53,13 @@ fun BottomNavigationBar(currentRoute: String = "Home") {
             label = { Text("Progress") },
             onClick = { /* TODO: Add function to load the Progress screen */ }
         )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun NavigationBarPreview() {
+    CalorieTrackerTheme {
+        BottomNavigationBar(currentRoute = "home")
     }
 }
