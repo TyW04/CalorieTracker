@@ -1,4 +1,4 @@
-package com.example.calorietracker.ui
+package com.example.calorietracker
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -29,7 +29,6 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.calorietracker.R
 import com.example.calorietracker.ui.theme.CalorieTrackerTheme
 
 class MainActivity : ComponentActivity() {
